@@ -1,0 +1,36 @@
+import pygame
+
+
+def draw(screen):
+    screen.fill((0, 0, 0))
+    z = W // N
+    x, y = W // N, W - z
+    ok = [0, z]
+    count = 0
+    for i in range(N):
+        count += 1
+        for j in range(N):
+            pygame.draw.polygon(screen, pygame.Color('white'), [(x, y), (x + z, y),
+                                                  (x + z, y + z), (x, y + z)], 0)
+            x += z * 2
+        x, y = ok[0] if count % 2 == 1 else ok[1], y - z
+
+
+if __name__ == '__main__':
+    # инициализация Pygame:
+    pygame.init()
+    # размеры окна:
+    W, N = map(int, input().split())
+    size = width, height = W, W
+    # screen — холст, на котором нужно рисовать:
+    screen = pygame.display.set_mode(size)
+    # формирование кадра:
+    # команды рисования на холсте
+    draw(screen)
+    # смена (отрисовка) кадра:
+    pygame.display.flip()
+    # ожидание закрытия окна:
+    while pygame.event.wait().type != pygame.QUIT:
+        pass
+    # завершение работы:
+    pygame.quit()
