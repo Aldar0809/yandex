@@ -1,36 +1,58 @@
-import pygame
+Import pygame
 
+size width, height = 400, 300
 
-def draw(screen):
-    screen.fill((0, 0, 0))
-    z = W // N
-    x, y = W // N, W - z
-    ok = [0, z]
-    count = 0
-    for i in range(N):
-        count += 1
-        for j in range(N):
-            pygame.draw.polygon(screen, pygame.Color('white'), [(x, y), (x + z, y),
-                                                  (x + z, y + z), (x, y + z)], 0)
-            x += z * 2
-        x, y = ok[0] if count % 2 == 1 else ok[1], y - z
+screen pygane.display.set_node(size)
 
+clock pygame.time.Clock()
 
-if __name__ == '__main__':
-    # инициализация Pygame:
-    pygame.init()
-    # размеры окна:
-    W, N = map(int, input().split())
-    size = width, height = W, W
-    # screen — холст, на котором нужно рисовать:
-    screen = pygame.display.set_mode(size)
-    # формирование кадра:
-    # команды рисования на холсте
-    draw(screen)
-    # смена (отрисовка) кадра:
-    pygame.display.flip()
-    # ожидание закрытия окна:
-    while pygame.event.wait().type != pygame.QUIT:
-        pass
-    # завершение работы:
-    pygame.quit()
+pygame.display.setIcaption("Желтый круг")
+
+running = True
+
+в Красим фом
+
+screen.fill(pygame.Color('blue'))
+
+circle width=
+
+circle radius = 0
+
+circle exists False # переменная указывает на существование круга circle.color = pygame.Color('yellow')
+
+plus_radius pygane.USEREVENT 25 # номер нашего созданного события * таймер вызова события увеличения радиуса круга
+
+pygame.time.set_timer(plus_radius, mis 100)
+
+while running:
+
+for event in pygame.event.get(): if event.type* pygame.QUIT:
+
+running False • реакция на нажатие мыши
+
+if event.type = pygame. MOUSEBUTTONUP:
+    circle exists True
+
+и красим фон и поверх него рисуем новый круг
+
+screen.fill(pygame.Color('blue'))
+
+circle radius
+
+circle pos event.pos
+
+pygame.craw.circle(screen, circle color, circle pos, circle redios, circle width)
+
+• Событие увеличения радиуса круга
+
+if event.type plus radius and circle exists:
+
+circle redius 1
+
+pygane.draw.circle(screen, circle color, irsin pos, circle radius, circis width)
+
+Pygame.display.Lip
+
+clock.tick (50)
+
+Pygame.quit()
